@@ -1,22 +1,17 @@
-import { useEffect, useState } from 'react';
-import './App.css'
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Items from "./pages/Items";        
+import ItemDetail from "./pages/ItemDetail"; 
 
 function App() {
-  const [message, setMessage] = useState("...Loading...");
-  async function fetchData() {
-    const result = await fetch('http://localhost:3000/test_api');
-    const data = await result.json();
-    console.log("result: ", result);
-    console.log("data:", data);
-    setMessage(data.message);
-  }
-  useEffect(()=>{
-    fetchData();
-  },[]);
   return (
-    <div>
-      Message: {message}
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/items" />} /> 
+        <Route path="/items" element={<Items />} />
+        <Route path="/items/:id" element={<ItemDetail />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-export default App
+
+export default App;
