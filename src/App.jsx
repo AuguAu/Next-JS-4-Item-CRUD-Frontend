@@ -1,16 +1,21 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Items from "./pages/Items";        
-import ItemDetail from "./pages/ItemDetail"; 
+import ItemDetail from "./pages/ItemDetail";  
+import Users from "./pages/UserManagement";
+import UserDetail from "./pages/UserDetail";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Navigate to="/items" />} /> 
-        <Route path="/items" element={<Items />} />
-        <Route path="/items/:id" element={<ItemDetail />} />
-      </Routes>
-    </BrowserRouter>
+
+    <Routes>
+      <Route path="/" element={<Navigate to="/users" />} /> 
+      <Route path="/users" element={<Users />} />
+      <Route path="/users/:id" element={<UserDetail />} />
+      
+      {/* <Route path="/items" element={<Items />} /> */}
+      {/* <Route path="/items/:id" element={<ItemDetail />} /> */}
+    </Routes>
+
   );
 }
 
