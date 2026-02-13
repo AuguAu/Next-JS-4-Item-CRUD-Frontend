@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useUser } from "../contexts/UserProvider";
+import { useUser } from "../context/UserProvider";
 import { Navigate } from "react-router-dom";
 import Login from "./Login";
 export default function Logout() {

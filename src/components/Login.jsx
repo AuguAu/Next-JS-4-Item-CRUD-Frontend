@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { useUser } from "../contexts/UserProvider";
+import { useUser } from "../context/UserProvider";
 import { Navigate } from "react-router-dom";
 export default function Login() {
     const [controlState, setControlState] = useState({
